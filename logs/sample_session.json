@@ -1,0 +1,631 @@
+{
+  "session_id": "session_635224d4",
+  "created_at": "2026-07-01T05:35:44.223822+00:00",
+  "model": "moonshotai/Kimi-K2.6",
+  "provider": "Nebius",
+  "tool_provider": "Tavily",
+  "prune_every": 2,
+  "recent_turns_to_keep": 2,
+  "retention_policy": {
+    "preserve_customer_issue": true,
+    "preserve_product_or_service": true,
+    "preserve_account_constraints": true,
+    "preserve_troubleshooting_steps": true,
+    "preserve_unresolved_questions": true,
+    "preserve_prior_decisions": true,
+    "preserve_escalation_status": true,
+    "preserve_source_urls": true,
+    "preserve_source_snippets": true,
+    "custom_rules": []
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 94,
+          "output_tokens": 33,
+          "total_tokens": 127,
+          "latency_seconds": 1.62,
+          "estimated_cost": 0.0001356,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 207,
+          "output_tokens": 33,
+          "total_tokens": 240,
+          "latency_seconds": 1.64,
+          "estimated_cost": 0.00020339999999999998,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": -113,
+        "input_token_reduction_percent": -1.202127659574468,
+        "estimated_cost_saved": -6.78e-05,
+        "cost_reduction_percent": -0.5,
+        "latency_delta_seconds": 0.019999999999999796
+      }
+    },
+    {
+      "turn": 2,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 142,
+          "output_tokens": 33,
+          "total_tokens": 175,
+          "latency_seconds": 1.63,
+          "estimated_cost": 0.00016439999999999998,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 256,
+          "output_tokens": 33,
+          "total_tokens": 289,
+          "latency_seconds": 1.65,
+          "estimated_cost": 0.0002328,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": -227,
+        "input_token_reduction_percent": -0.961864406779661,
+        "estimated_cost_saved": -0.0001362,
+        "cost_reduction_percent": -0.45400000000000007,
+        "latency_delta_seconds": 0.020000000000000018
+      }
+    },
+    {
+      "turn": 3,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 193,
+          "output_tokens": 33,
+          "total_tokens": 226,
+          "latency_seconds": 1.64,
+          "estimated_cost": 0.000195,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 288,
+          "output_tokens": 33,
+          "total_tokens": 321,
+          "latency_seconds": 1.66,
+          "estimated_cost": 0.000252,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": -322,
+        "input_token_reduction_percent": -0.7505827505827506,
+        "estimated_cost_saved": -0.00019319999999999993,
+        "cost_reduction_percent": -0.39030303030303015,
+        "latency_delta_seconds": 0.019999999999999796
+      }
+    },
+    {
+      "turn": 4,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 320,
+          "output_tokens": 33,
+          "total_tokens": 353,
+          "latency_seconds": 1.66,
+          "estimated_cost": 0.0002712,
+          "tool_calls": 1,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 367,
+          "output_tokens": 33,
+          "total_tokens": 400,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.0002994,
+          "tool_calls": 1,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 4,
+          "compressed_messages": 3,
+          "preserved": [
+            "customer issue",
+            "support memory",
+            "2 evidence source(s)"
+          ],
+          "notes": "Kept last 4 message(s); compressed 3 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": -369,
+        "input_token_reduction_percent": -0.49265687583444595,
+        "estimated_cost_saved": -0.00022139999999999996,
+        "cost_reduction_percent": -0.2889584964761159,
+        "latency_delta_seconds": 0.01749999999999985
+      }
+    },
+    {
+      "turn": 5,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 456,
+          "output_tokens": 33,
+          "total_tokens": 489,
+          "latency_seconds": 1.69,
+          "estimated_cost": 0.0003528,
+          "tool_calls": 1,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 371,
+          "output_tokens": 33,
+          "total_tokens": 404,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.00030179999999999996,
+          "tool_calls": 1,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": -284,
+        "input_token_reduction_percent": -0.23568464730290456,
+        "estimated_cost_saved": -0.00017040000000000002,
+        "cost_reduction_percent": -0.15227882037533513,
+        "latency_delta_seconds": 0.009999999999999787
+      }
+    },
+    {
+      "turn": 6,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 589,
+          "output_tokens": 33,
+          "total_tokens": 622,
+          "latency_seconds": 1.72,
+          "estimated_cost": 0.0004326,
+          "tool_calls": 1,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 375,
+          "output_tokens": 33,
+          "total_tokens": 408,
+          "latency_seconds": 1.68,
+          "estimated_cost": 0.0003042,
+          "tool_calls": 1,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 6,
+          "compressed_messages": 7,
+          "preserved": [
+            "customer issue",
+            "support memory",
+            "2 evidence source(s)"
+          ],
+          "notes": "Kept last 4 message(s); compressed 7 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": -70,
+        "input_token_reduction_percent": -0.03901895206243032,
+        "estimated_cost_saved": -4.2000000000000154e-05,
+        "cost_reduction_percent": -0.027068832173240624,
+        "latency_delta_seconds": 0.0016666666666664831
+      }
+    },
+    {
+      "turn": 7,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 636,
+          "output_tokens": 33,
+          "total_tokens": 669,
+          "latency_seconds": 1.73,
+          "estimated_cost": 0.0004607999999999999,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 368,
+          "output_tokens": 33,
+          "total_tokens": 401,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.00030000000000000003,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 198,
+        "input_token_reduction_percent": 0.08148148148148149,
+        "estimated_cost_saved": 0.00011880000000000007,
+        "cost_reduction_percent": 0.05903398926654744,
+        "latency_delta_seconds": -0.0071428571428573395
+      }
+    },
+    {
+      "turn": 8,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 685,
+          "output_tokens": 33,
+          "total_tokens": 718,
+          "latency_seconds": 1.74,
+          "estimated_cost": 0.0004902,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 366,
+          "output_tokens": 33,
+          "total_tokens": 399,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.0002988,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 8,
+          "compressed_messages": 11,
+          "preserved": [
+            "customer issue",
+            "support memory",
+            "2 evidence source(s)"
+          ],
+          "notes": "Kept last 4 message(s); compressed 11 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": 517,
+        "input_token_reduction_percent": 0.16597110754414124,
+        "estimated_cost_saved": 0.00031020000000000006,
+        "cost_reduction_percent": 0.1239510908654999,
+        "latency_delta_seconds": -0.015000000000000124
+      }
+    },
+    {
+      "turn": 9,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 728,
+          "output_tokens": 33,
+          "total_tokens": 761,
+          "latency_seconds": 1.75,
+          "estimated_cost": 0.000516,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 362,
+          "output_tokens": 33,
+          "total_tokens": 395,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.0002964,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 883,
+        "input_token_reduction_percent": 0.22976841009627894,
+        "estimated_cost_saved": 0.0005298,
+        "cost_reduction_percent": 0.17551182667461734,
+        "latency_delta_seconds": -0.022222222222222143
+      }
+    },
+    {
+      "turn": 10,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 771,
+          "output_tokens": 33,
+          "total_tokens": 804,
+          "latency_seconds": 1.75,
+          "estimated_cost": 0.0005417999999999999,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 355,
+          "output_tokens": 33,
+          "total_tokens": 388,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.0002922,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 10,
+          "compressed_messages": 15,
+          "preserved": [
+            "customer issue",
+            "support memory",
+            "2 evidence source(s)"
+          ],
+          "notes": "Kept last 4 message(s); compressed 15 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": 1299,
+        "input_token_reduction_percent": 0.2815344603381014,
+        "estimated_cost_saved": 0.0007794,
+        "cost_reduction_percent": 0.21890798786653184,
+        "latency_delta_seconds": -0.028000000000000247
+      }
+    },
+    {
+      "turn": 11,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 813,
+          "output_tokens": 33,
+          "total_tokens": 846,
+          "latency_seconds": 1.76,
+          "estimated_cost": 0.000567,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 355,
+          "output_tokens": 33,
+          "total_tokens": 388,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.0002922,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 1757,
+        "input_token_reduction_percent": 0.32375161230882626,
+        "estimated_cost_saved": 0.0010542,
+        "cost_reduction_percent": 0.2554150312545428,
+        "latency_delta_seconds": -0.033636363636363686
+      }
+    },
+    {
+      "turn": 12,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 858,
+          "output_tokens": 33,
+          "total_tokens": 891,
+          "latency_seconds": 1.77,
+          "estimated_cost": 0.000594,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 357,
+          "output_tokens": 33,
+          "total_tokens": 390,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.0002934,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 12,
+          "compressed_messages": 19,
+          "preserved": [
+            "customer issue",
+            "support memory",
+            "2 evidence source(s)"
+          ],
+          "notes": "Kept last 4 message(s); compressed 19 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": 2258,
+        "input_token_reduction_percent": 0.3592680986475736,
+        "estimated_cost_saved": 0.0013547999999999998,
+        "cost_reduction_percent": 0.28694878637692206,
+        "latency_delta_seconds": -0.039166666666666794
+      }
+    },
+    {
+      "turn": 13,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 907,
+          "output_tokens": 33,
+          "total_tokens": 940,
+          "latency_seconds": 1.78,
+          "estimated_cost": 0.0006234,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 364,
+          "output_tokens": 33,
+          "total_tokens": 397,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.00029759999999999997,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 2801,
+        "input_token_reduction_percent": 0.3894605116796441,
+        "estimated_cost_saved": 0.0016805999999999995,
+        "cost_reduction_percent": 0.31443646160754374,
+        "latency_delta_seconds": -0.0446153846153845
+      }
+    },
+    {
+      "turn": 14,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 950,
+          "output_tokens": 33,
+          "total_tokens": 983,
+          "latency_seconds": 1.79,
+          "estimated_cost": 0.0006492,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 361,
+          "output_tokens": 33,
+          "total_tokens": 394,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.0002958,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 14,
+          "compressed_messages": 23,
+          "preserved": [
+            "customer issue",
+            "support memory",
+            "2 evidence source(s)"
+          ],
+          "notes": "Kept last 4 message(s); compressed 23 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": 3390,
+        "input_token_reduction_percent": 0.4163596168017686,
+        "estimated_cost_saved": 0.0020339999999999994,
+        "cost_reduction_percent": 0.3393393393393393,
+        "latency_delta_seconds": -0.050000000000000044
+      }
+    },
+    {
+      "turn": 15,
+      "baseline": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 998,
+          "output_tokens": 33,
+          "total_tokens": 1031,
+          "latency_seconds": 1.8,
+          "estimated_cost": 0.0006779999999999999,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "Thanks for the details. Based on what you've shared, here are the likely causes and concrete next steps to move this toward resolution.",
+        "metrics": {
+          "input_tokens": 361,
+          "output_tokens": 33,
+          "total_tokens": 394,
+          "latency_seconds": 1.67,
+          "estimated_cost": 0.0002958,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 4027,
+        "input_token_reduction_percent": 0.44059080962800873,
+        "estimated_cost_saved": 0.0024161999999999994,
+        "cost_reduction_percent": 0.36214028776978413,
+        "latency_delta_seconds": -0.055333333333333234
+      }
+    }
+  ],
+  "summary": {
+    "turns": 15,
+    "baseline_total_input_tokens": 9140,
+    "pruned_total_input_tokens": 5113,
+    "baseline_total_tokens": 9635,
+    "pruned_total_tokens": 5608,
+    "input_token_reduction_percent": 0.44059080962800873,
+    "baseline_total_cost": 0.006671999999999999,
+    "pruned_total_cost": 0.0042558,
+    "estimated_cost_savings": 0.0024161999999999994,
+    "cost_reduction_percent": 0.36214028776978413,
+    "baseline_avg_latency": 1.722,
+    "pruned_avg_latency": 1.6666666666666667
+  }
+}

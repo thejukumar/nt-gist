@@ -1,9 +1,19 @@
-// Triggers report export (Markdown + JSON) via GET /report/{session_id}.
-// TODO(feat/reporting-polish): wire to backend report endpoint.
+"use client";
 
-export function ExportReportButton() {
+// Triggers report export (writes Markdown + JSON server-side, shows paths).
+export function ExportReportButton({
+  onExport,
+  disabled,
+}: {
+  onExport: () => void;
+  disabled: boolean;
+}) {
   return (
-    <button className="rounded-xl bg-white/10 px-4 py-1.5 text-sm" disabled>
+    <button
+      onClick={onExport}
+      disabled={disabled}
+      className="rounded-xl border border-white/15 px-4 py-1.5 text-sm hover:bg-white/10 disabled:opacity-40"
+    >
       Export Report
     </button>
   );

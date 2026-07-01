@@ -73,6 +73,12 @@ pruning defaults, ports, and LangSmith tracing.
 
 ---
 
+## Sample results
+See [`reports/sample_report.md`](reports/sample_report.md) and
+[`logs/sample_session.json`](logs/sample_session.json) — a deterministic 15-turn telecom run showing a
+**44.1% input-token reduction** (baseline grows 94→998 tokens/turn; pruned stays ~360). The report
+projects per-conversation savings across 10,000 monthly conversations.
+
 ## Project docs
 - [`TECHNICAL_STATEMENT.md`](TECHNICAL_STATEMENT.md) — approach + value (submission deliverable)
 - [`BUILD_LOG.md`](BUILD_LOG.md) — how it was built
