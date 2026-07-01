@@ -17,6 +17,14 @@ def test_custom_rules_accepted():
     assert policy.custom_rules == ["always keep the ticket ID"]
 
 
-@pytest.mark.skip(reason="to_prompt_block lands in feat/pruning-engine")
 def test_serializes_to_prompt_block():
-    RetentionPolicy().to_prompt_block()
+    block = RetentionPolicy(custom_rules=["always keep the ticket ID"]).to_prompt_block()
+    assert "Retention policy" in block
+    assert "Customer issue" in block
+    assert "always keep the ticket ID" in block
+
+
+def test_disabled_flag_omitted_from_block():
+    block = RetentionPolicy(preserve_source_snippets=False).to_prompt_block()
+    assert "Tavily source snippets" not in block
+    assert "Customer issue" in block

@@ -24,9 +24,27 @@ class RetentionPolicy:
     preserve_source_snippets: bool = True
     custom_rules: list[str] = field(default_factory=list)
 
-    def to_prompt_block(self) -> str:
-        """Serialize enabled rules into a prompt-ready retention block.
+    _LABELS = {
+        "preserve_customer_issue": "Customer issue",
+        "preserve_product_or_service": "Product or service",
+        "preserve_account_constraints": "Account / plan constraints",
+        "preserve_troubleshooting_steps": "Troubleshooting steps already tried",
+        "preserve_unresolved_questions": "Open questions",
+        "preserve_prior_decisions": "Prior decisions",
+        "preserve_escalation_status": "Escalation status",
+        "preserve_source_urls": "Tavily source URLs",
+        "preserve_source_snippets": "Tavily source snippets",
+    }
 
-        TODO(feat/pruning-engine): render enabled flags + custom rules as text.
-        """
-        raise NotImplementedError
+    def enabled_labels(self) -> list[str]:
+        """Human labels for the enabled retention flags (+ custom rules)."""
+        labels = [
+            label for attr, label in self._LABELS.items() if getattr(self, attr)
+        ]
+        return labels + list(self.custom_rules)
+
+    def to_prompt_block(self) -> str:
+        """Serialize enabled rules into a prompt-ready retention block."""
+        lines = ["Retention policy — always preserve:"]
+        lines += [f"- {label}" for label in self.enabled_labels()]
+        return "\n".join(lines)

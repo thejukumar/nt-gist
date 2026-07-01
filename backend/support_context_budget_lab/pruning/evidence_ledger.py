@@ -25,15 +25,21 @@ class EvidenceLedger:
     items: list[EvidenceItem] = field(default_factory=list)
 
     def upsert(self, item: EvidenceItem) -> None:
-        """Add or update an evidence item (dedupe by url).
-
-        TODO(feat/pruning-engine): merge by url, update last_used_turn.
-        """
-        raise NotImplementedError
+        """Add a new item or update the existing one with the same url."""
+        for existing in self.items:
+            if existing.url and existing.url == item.url:
+                existing.snippet = item.snippet or existing.snippet
+                existing.relevant_claim = item.relevant_claim or existing.relevant_claim
+                existing.last_used_turn = max(existing.last_used_turn, item.last_used_turn)
+                return
+        self.items.append(item)
 
     def to_prompt_block(self) -> str:
-        """Render the ledger as a compact prompt-ready block.
-
-        TODO(feat/pruning-engine): list source_id, title, url, relevant_claim.
-        """
-        raise NotImplementedError
+        """Render the ledger as a compact prompt-ready block."""
+        if not self.items:
+            return "Evidence ledger: (empty)"
+        lines = ["Evidence ledger:"]
+        for it in self.items:
+            claim = it.relevant_claim or it.snippet
+            lines.append(f"- [{it.source_id}] {it.title} ({it.url}): {claim}")
+        return "\n".join(lines)

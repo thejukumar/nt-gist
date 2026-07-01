@@ -27,7 +27,9 @@ a hardcoded prompt trick.
 2. `feat/providers-metrics` — Nebius client (usage_metadata primary + tiktoken fallback, latency
    capture), Tavily client (normalized sources + tool-call count), metrics layer (session stats +
    comparison). langchain imported lazily so the app still boots without it.
-3. `feat/pruning-engine` — _TODO_
+3. `feat/pruning-engine` — retention policy / support memory / evidence ledger serialization,
+   ledger dedup, and the deterministic context pruner (rebuilds a compact system message + keeps the
+   last N turns; emits a PruningEvent every `prune_every`). All prior skips now implemented.
 4. `feat/agents-ab-endpoint` — _TODO_
 5. `feat/frontend` — _TODO_
 6. `feat/reporting-polish` — _TODO_
