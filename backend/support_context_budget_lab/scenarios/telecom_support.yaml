@@ -1,0 +1,18 @@
+name: telecom-support
+description: Long-running enterprise support chat for business internet issues
+turns:
+  - "My internet keeps dropping every evening, especially during video calls."
+  - "I already restarted the router twice and it still happens."
+  - "I am on a business internet plan. Does that change support priority?"
+  - "What should I check before asking for a technician?"
+  - "Can you explain whether this sounds like a modem issue, router issue, or congestion?"
+  - "Use web research to find common causes of evening internet slowdowns."
+  - "What evidence should I collect before escalating this?"
+  - "Can I request a bill credit if this has affected my work calls?"
+  - "Summarize everything we know so far."
+  - "Draft a support escalation message."
+  - "Make the escalation more technical."
+  - "Add the troubleshooting steps I already tried."
+  - "Include that I am on a business plan and rely on video calls."
+  - "Add a concise timeline of the issue."
+  - "Give me the final escalation note with any useful sources."
