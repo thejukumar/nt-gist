@@ -18,6 +18,39 @@ heavier while the pruned agent stays lean.
 
 ---
 
+## 👋 For reviewers — start here
+
+**Read in this order:**
+
+1. **[`SUBMISSION.md`](SUBMISSION.md)** — the entry document: outcome analysis of a real run
+   (−66.2% input tokens, cost/latency breakdown, business projection), embedded screenshots, and the
+   reproduce-it guide.
+2. **[`TECHNICAL_STATEMENT.md`](TECHNICAL_STATEMENT.md)** — the approach, key design decisions, and
+   the technical/business value.
+3. **This `README`** — architecture, repo layout, and full run details (below).
+
+**Run it in ~2 minutes:**
+
+```bash
+cp .env.example .env      # then paste your two API keys into .env (see below)
+./run.sh                  # checks prereqs, installs deps, starts backend + frontend
+```
+Open **http://localhost:3000** and click **“Run 15-Turn Demo.”** (Backend: http://127.0.0.1:8000.)
+
+**API keys — where they go:** put both in the repo-root **`.env`** file (copied from
+[`.env.example`](.env.example)); nothing else needs editing.
+
+| Variable | Where to get it |
+|---|---|
+| `TAVILY_API_KEY` | https://app.tavily.com |
+| `NEBIUS_API_KEY` | https://tokenfactory.nebius.com |
+
+**Build record (how this was made) — Traces.com:**
+🔗 **https://traces.com/s/jn7c06x011j8ck0q40k17n12r189qba1**
+This link is **public**. If it isn't viewable for any reason, please contact **thejushree24@gmail.com**.
+
+---
+
 ## Quick start
 
 ```bash
