@@ -13,6 +13,8 @@ from ..scenarios import load_scenario
 from ..session_manager import SessionManager
 from .dependencies import get_session_manager
 from .schemas import (
+    ChatTurnRequest,
+    ChatTurnResponse,
     DemoRunRequest,
     DemoRunResponse,
     SessionStartRequest,
@@ -72,10 +74,16 @@ def run_demo(body: DemoRunRequest) -> DemoRunResponse:
     )
 
 
-@router.post("/chat/turn")
-def chat_turn() -> dict:
-    """Run one prompt through both agents. Wired in feat/agents-ab-endpoint."""
-    raise HTTPException(status_code=501, detail="Not implemented yet (feat/agents-ab-endpoint)")
+@router.post("/chat/turn", response_model=ChatTurnResponse)
+def chat_turn(
+    body: ChatTurnRequest,
+    sessions: SessionManager = Depends(get_session_manager),
+) -> dict:
+    """Run one prompt through both agents; return baseline + pruned + comparison."""
+    session = sessions.get(body.session_id)
+    if session is None:
+        raise HTTPException(status_code=404, detail="Session not found")
+    return sessions.run_turn(session, body.message)
 
 
 @router.get("/report/{session_id}")

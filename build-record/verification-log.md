@@ -22,4 +22,12 @@
 - [x] Compact context rebuilds system message (persona + retention + memory + ledger)
 - [x] Evidence ledger dedupes by url; memory/policy serialize to prompt blocks
 - [ ] Baseline tokens grow across turns (feat/agents-ab-endpoint)
+
+## `feat/agents-ab-endpoint`
+- [x] `pytest` passes: 38 passed (agents + orchestration via injected fakes)
+- [x] Baseline cumulative input tokens exceed pruned over a long conversation
+- [x] Pruning events fire on prune-cadence turns once history exceeds the window
+- [x] Tavily search increments tool_calls and populates the pruned ledger
+- [x] `POST /api/chat/turn` returns baseline + pruned + comparison (shape validated)
+- [ ] LIVE: real Nebius/Tavily 15-turn run (needs uv + keys) — pending
 - [ ] 15-turn demo completes; report + JSON log generated (feat/reporting-polish)
