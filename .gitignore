@@ -31,9 +31,11 @@ npm-debug.log*
 logs/*.json
 !logs/sample_session.json
 !logs/session_20260701T060851.json
+!logs/session_20260701T215948.json
 reports/*.md
 !reports/sample_report.md
 !reports/session_20260701T060851.md
+!reports/session_20260701T215948.md
 
 # --- OS / editor ---
 .DS_Store
