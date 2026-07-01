@@ -1,0 +1,351 @@
+{
+  "session_id": "session_b1ae27cc",
+  "created_at": "2026-07-01T06:08:51.627773+00:00",
+  "model": "moonshotai/Kimi-K2.6",
+  "provider": "Nebius",
+  "tool_provider": "Tavily",
+  "prune_every": 2,
+  "recent_turns_to_keep": 2,
+  "retention_policy": {
+    "preserve_customer_issue": true,
+    "preserve_product_or_service": true,
+    "preserve_account_constraints": true,
+    "preserve_troubleshooting_steps": true,
+    "preserve_unresolved_questions": true,
+    "preserve_prior_decisions": true,
+    "preserve_escalation_status": true,
+    "preserve_source_urls": true,
+    "preserve_source_snippets": true,
+    "custom_rules": []
+  },
+  "turns": [
+    {
+      "turn": 1,
+      "baseline": {
+        "response": " I\u2019m sorry to hear that \u2014 evening drops during video calls are especially frustrating. This pattern usually points to **peak-time congestion**, **bandwidth saturation** in your home, or **equipment/heat issues**. Let\u2019s narrow it down and get you stable again.\n\n### Quick checks to try tonight\n\n1. **Switch from Wi-Fi to Ethernet** (if possible)\n   - Video calls are sensitive to packet loss. A wired connection immediately rules out Wi-Fi interference, which often worsens in the evening when neighbors are also online.\n\n2. **Run a speed test at two different times**\n   - Test once during the day and once right when the drops start (e.g., 7\u20139 PM). Use **fast.com** or **speedtest.net**.\n   - If your download/upload drops significantly in the evening, your ISP\u2019s node may be congested.\n\n3. **Check for overheating**\n   - Touch your modem/router. If it\u2019s hot, it may be throttling or rebooting under load. Move it to a ventilated spot and ensure vents aren\u2019t blocked.\n\n4. **Audit what else is using bandwidth**\n   - Evening is prime time for streaming, game updates, cloud backups, and security cameras uploading footage.\n   - Pause or schedule large uploads/downloads for overnight.\n\n5. **Reboot your modem and router**\n   - Unplug both for 60 seconds, plug the modem in first, wait for it to fully sync, then plug the router back in. This clears stale sessions that can cause intermittent drops.\n\n### Router settings to optimize\n\n- **Enable QoS (Quality of Service)** if your router supports it. Prioritize your work device or video calling apps (Zoom, Teams, Meet).\n- **Switch Wi-Fi bands**: If you\u2019re on 2.4 GHz, try 5 GHz (shorter range but less congested). If you\u2019re far from the router, 2.4 GHz may actually be more stable \u2014 test both.\n- **Update firmware** on your router and check for modem/PON firmware updates from your ISP.\n\n### If the pattern continues\n\n- **Log the exact times** of the drops for 2\u20133 days. ISPs can often see node-level congestion or maintenance if you provide timestamps.\n- **Check for neighborhood-wide issues**: Ask neighbors if they experience the same evening slowdowns. If yes, it\u2019s likely an ISP capacity issue on their local node.\n- **Contact your ISP** if speeds are consistently below your plan during evening hours. Ask them to run line quality tests and check for **signal-to-noise ratio (SNR)** or **upstream power level** issues on the coax/fiber line.\n\n### A few questions to help me tailor this further\n\n1. Are you on **Wi-Fi or Ethernet** when the drops happen?\n2. Do **all devices** lose internet, or just the one on the video call?\n3. What type of internet do you have \u2014 **cable, fiber, DSL, or 5G/fixed wireless**?\n4. Do the drops happen at **exactly the same time** each evening, or randomly between certain hours?\n\nIf you can share those details, I can pinpoint whether this is likely an ISP-side congestion issue, a router hardware problem, or a bandwidth-saturation issue inside your home.",
+        "metrics": {
+          "input_tokens": 76,
+          "output_tokens": 884,
+          "total_tokens": 960,
+          "latency_seconds": 5.297240584000974,
+          "estimated_cost": 0.0021671999999999998,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": " I remember your issue: your internet connection drops consistently every evening, and it\u2019s especially disruptive during video calls. We haven\u2019t started troubleshooting yet, so I\u2019d like to gather a few details to narrow this down.\n\nCould you tell me:\n\n1. **Connection type & ISP** \u2013 Are you on cable, fiber, DSL, or fixed wireless? Who is your provider?\n2. **Network setup** \u2013 Are you connected via Wi-Fi or Ethernet when the drops happen? What router/modem model are you using?\n3. **Timing & pattern** \u2013 What approximate time does this start, and how long do the outages last? Does it happen every single evening?\n4. **Scope** \u2013 Do all devices lose connection, or just the one on the video call?\n5. **Steps tried so far** \u2013 Have you rebooted the router/modem, checked for overheating, or run any speed tests during the affected window?\n\nOnce I have this, I can suggest targeted next steps and search for any known outages or equipment issues that match your setup.",
+        "metrics": {
+          "input_tokens": 176,
+          "output_tokens": 509,
+          "total_tokens": 685,
+          "latency_seconds": 2.752006958002312,
+          "estimated_cost": 0.0013272,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": -100,
+        "input_token_reduction_percent": -1.3157894736842106,
+        "estimated_cost_saved": 0.0008399999999999998,
+        "cost_reduction_percent": 0.38759689922480617,
+        "latency_delta_seconds": -2.5452336259986623
+      }
+    },
+    {
+      "turn": 2,
+      "baseline": {
+        "response": " Since restarting twice didn\u2019t fix it, we can rule out a temporary session glitch. This points to a **recurring trigger** \u2014 most likely peak-time congestion, bandwidth competition in your home, or a hardware/line issue that surfaces under evening load.\n\nLet\u2019s diagnose which one it is. Try these checks during your next drop:\n\n### 1. Wi-Fi vs. actual internet outage\n- When the call drops, try opening your router\u2019s admin page from a connected device (usually `192.168.1.1` or `192.168.0.1`).\n  - **If you CAN reach the router page but not Google/Zoom:** Your internet connection itself is dropping (likely ISP or modem).\n  - **If you CAN\u2019T reach the router page either:** Your Wi-Fi is cutting out (likely router hardware or interference).\n\n### 2. Check the lights\n- Look at your modem and router lights during the drop. Are any showing **red, orange, or unusual flashing**? Note which ones.\n\n### 3. Is it all devices or just the one on the call?\n- Does a phone, smart TV, or another laptop lose connection at the **exact same moment**?\n\n### 4. Rule out bandwidth saturation\n- Ask anyone else at home to pause streaming, gaming, or large downloads during your next call. If the drops stop, your connection is being maxed out in the evening.\n\n### 5. Check for heat buildup\n- Feel your modem and router. If they\u2019re hot after running all day, thermal throttling can cause predictable evening failures. Move them to a cooler, ventilated spot if so.\n\n### 6. Compare day vs. night speeds\n- Run a speed test during the day and another right when the drops happen tonight. A big evening drop strongly suggests **ISP node congestion**.\n\n---\n\n**To narrow this down further, can you tell me:**\n\n1. Are you on **Wi-Fi or Ethernet** for these calls?\n2. Do **all devices** lose connection, or just the video call device?\n3. What type of internet do you have \u2014 **cable, fiber, DSL, or fixed wireless/5G**?\n4. Are the drops tied to **specific hours** (e.g., 7\u201310 PM) or random throughout the evening?\n\nIf the drops are predictable, affect all devices, and speed tests show a major evening decline, I\u2019d recommend calling your ISP now \u2014 they can check for node congestion or signal degradation on their end. But let me know the answers above and I\u2019ll tell you exactly what to request.",
+        "metrics": {
+          "input_tokens": 774,
+          "output_tokens": 1413,
+          "total_tokens": 2187,
+          "latency_seconds": 43.65937416599991,
+          "estimated_cost": 0.0038556,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": " Thanks for trying that\u2014since two router restarts haven\u2019t resolved it, we can rule out a simple temporary glitch. The pattern (every evening, video calls affected) usually points to congestion, thermal issues, or ISP-side drops.\n\nTo narrow this down, could you share:\n\n1. **Your ISP and connection type** (cable, fiber, DSL, fixed wireless)?\n2. **Router/modem make and model**?\n3. **Does the drop affect all devices** in the home, or just the one on the video call?\n4. **Wi-Fi vs. Ethernet**\u2014does it happen on both, or only on wireless?\n5. **Approximate time and duration** (e.g., 7\u201310 PM, lasts 30 seconds or several minutes)?\n6. **Any pattern you\u2019ve noticed**\u2014does it coincide with peak hours, heat buildup on the router, or specific bandwidth use?\n\nWith those details, I can check for known issues with that hardware or provider and give you the most effective next steps.",
+        "metrics": {
+          "input_tokens": 410,
+          "output_tokens": 499,
+          "total_tokens": 909,
+          "latency_seconds": 2.953195707999839,
+          "estimated_cost": 0.0014435999999999997,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 264,
+        "input_token_reduction_percent": 0.31058823529411766,
+        "estimated_cost_saved": 0.0032520000000000005,
+        "cost_reduction_percent": 0.5399481968519626,
+        "latency_delta_seconds": -21.625706041999365
+      }
+    },
+    {
+      "turn": 3,
+      "baseline": {
+        "response": " I understand \u2014 restarting twice should have cleared a temporary glitch, so the fact that it\u2019s still happening every evening means we\u2019re dealing with a **recurring trigger**, not a random fault.\n\nSince you\u2019ve already rebooted, let\u2019s skip the basics and isolate the cause quickly. Evening-only drops during video calls usually come down to three things:\n\n**1. ISP peak-time congestion** (most common with cable/DSL between 7\u201311 PM)  \n**2. Wi-Fi interference/overload** (neighbors and family devices peak in the evening)  \n**3. Bandwidth saturation** (streaming/gaming/uploads hogging your connection while you\u2019re on a call)\n\n### Do these three checks during your next drop\n\n| Check | What to do | What it tells us |\n|-------|-----------|------------------|\n| **Ethernet test** | Plug your computer directly into the modem/router with a cable for the next call | If drops stop, it\u2019s a Wi-Fi issue. If they continue, it\u2019s your ISP or line. |\n| **Device scope** | When the call drops, immediately try loading a webpage on your phone (with Wi-Fi on) | If phone also fails, your whole internet is cutting out. If phone works, only your call device is losing connection. |\n| **Modem lights** | Look at your modem (the box from your ISP) during the drop | Any red/orange/blinking lights? Note which ones \u2014 this is what your ISP will ask for. |\n\n### I need four quick details to tell you exactly what to request from your ISP (or fix yourself)\n\n1. **Are you on Wi-Fi or Ethernet** for these calls?\n2. **What type of internet do you have** \u2014 cable, fiber, DSL, or fixed wireless/5G?\n3. **Do all devices lose connection** at the same time, or just the one on the video call?\n4. **What are the exact hours** it happens (e.g., 7:00\u201310:30 PM)?\n\nIf you can give me those, I can tell you whether this is almost certainly an ISP congestion issue (and exactly what to tell them when you call), a router hardware problem, or a bandwidth conflict in your home.",
+        "metrics": {
+          "input_tokens": 1326,
+          "output_tokens": 1273,
+          "total_tokens": 2599,
+          "latency_seconds": 50.74853654199978,
+          "estimated_cost": 0.0038508,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": "  I hear you\u2014this is still happening despite two router restarts, so let\u2019s move past basic resets and look at what typically causes **evening-only** drops.\n\nSince the timing is consistent, the most common culprits are:\n- **ISP peak-hour congestion** (7\u201311 PM neighborhood overload)\n- **Router/modem overheating** after running all day\n- **Wi-Fi interference** spiking when neighbors are home streaming\n- **Bandwidth saturation** in your home (multiple devices streaming)\n\n**Quick test for tonight:**\nIf possible, connect your video call device via **Ethernet cable** directly to the router this evening. If the drop still happens on wired, it\u2019s likely your ISP or modem. If it only drops on Wi-Fi, we\u2019re dealing with wireless interference or router heat.\n\n**Also check during the next drop:**\n- Is the router/modem unusually warm to the touch?\n- Do **all** devices lose internet, or just the one on the call?\n\nTo get you the right fix, I still need to know:\n1. **Your ISP and connection type** (cable, fiber, DSL, etc.)?\n2. **Router and/or modem model**?\n3. **Does the wired test I mentioned above change anything**?\n\nIf you can get me those two or three details, I can look up whether your specific provider or hardware has known evening-drop issues and give you the exact next step.",
+        "metrics": {
+          "input_tokens": 626,
+          "output_tokens": 733,
+          "total_tokens": 1359,
+          "latency_seconds": 7.684218792001047,
+          "estimated_cost": 0.0021348,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 964,
+        "input_token_reduction_percent": 0.4430147058823529,
+        "estimated_cost_saved": 0.004968,
+        "cost_reduction_percent": 0.5031599416626155,
+        "latency_delta_seconds": -28.771909944665822
+      }
+    },
+    {
+      "turn": 4,
+      "baseline": {
+        "response": " Since two reboots didn\u2019t fix it, we can rule out temporary glitches entirely. Evening-only drops during video calls almost always mean one of three things:\n\n1. **ISP/node congestion** (very common with cable internet between 7\u201311 PM)\n2. **Wi-Fi interference/overload** (neighbors + family devices peak in the evening)\n3. **Your modem or line signal degrading under heat/load**\n\nHere is the **fastest way to tell which one it is tonight**:\n\n### Do this during your next drop\n\n1. **Look at your modem lights** (the box from your ISP, not your router).\n   - If the **Online**, **Cable**, or **DSL** light is red, orange, or flashing, your internet connection itself is dying. **Call your ISP.** Tell them: *\u201cMy connection drops every evening between [X] and [Y]. I\u2019ve rebooted my router twice. Please check my line signal levels and for node congestion.\u201d*\n   \n2. **If the modem lights look normal**, plug your computer directly into the modem with an Ethernet cable and start a call.\n   - If the drop **stops** on Ethernet, your Wi-Fi/router is the problem (interference or hardware failure).\n   - If it **still drops** on Ethernet, it is absolutely your ISP or the modem.\n\n### Immediate workaround for tonight\n\n- If your router has a **5 GHz** network, use that for your call (it\u2019s less congested in the evening than 2.4 GHz).\n- If the call is critical, use your phone as a hotspot for 10 minutes to bypass the issue entirely.\n\n### One question to narrow this down\n\nWhat type of internet do you have \u2014 **cable, fiber, DSL, or fixed wireless/5G**?  \nIf it\u2019s **cable**, this is almost certainly evening node congestion, and your ISP can confirm it with a remote test. If it\u2019s **fiber**, we need to look harder at your router or a device in your home saturating the upload bandwidth.\n\nLet me know what the modem lights do during the drop, and I\u2019ll tell you exactly what to demand from your ISP or what setting to change.",
+        "metrics": {
+          "input_tokens": 1805,
+          "output_tokens": 1662,
+          "total_tokens": 3467,
+          "latency_seconds": 13.475331334000657,
+          "estimated_cost": 0.0050718,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": " Understood\u2014two restarts haven\u2019t fixed it, so we need to look past basic resets. The **evening-only** pattern strongly points to one of three things: **ISP peak-hour congestion**, **router/modem overheating** after running all day, or **Wi-Fi interference** spiking when neighbors are home streaming.\n\n**The most important test for tonight:**\nPlug your computer directly into the router with an **Ethernet cable** during your next video call.  \n- If it **still drops** on wired \u2192 the issue is almost certainly your ISP or modem.  \n- If it **only drops on Wi-Fi** \u2192 we\u2019re likely dealing with router heat or wireless congestion.\n\nWhile you run that test, can you share:\n\n1. **Your ISP and connection type** (cable, fiber, DSL, fixed wireless)?\n2. **Your router and modem make/model**?\n3. **Do all devices in the house lose internet** during the drop, or just the one on the call?\n\nWith those details, I can check for known evening-drop issues with your specific provider or hardware and give you the exact next step.",
+        "metrics": {
+          "input_tokens": 705,
+          "output_tokens": 711,
+          "total_tokens": 1416,
+          "latency_seconds": 14.149971750000987,
+          "estimated_cost": 0.0021294,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 4,
+          "compressed_messages": 3,
+          "preserved": [
+            "customer issue",
+            "support memory"
+          ],
+          "notes": "Kept last 4 message(s); compressed 3 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": 2064,
+        "input_token_reduction_percent": 0.5184626978146194,
+        "estimated_cost_saved": 0.0079104,
+        "cost_reduction_percent": 0.5292866032357783,
+        "latency_delta_seconds": -21.410272354499284
+      }
+    },
+    {
+      "turn": 5,
+      "baseline": {
+        "response": " Yes \u2014 being on a **business plan usually changes support priority significantly**, and you should use that to your advantage right now.\n\n### What business plans typically include\n\n| Feature | What it means for you |\n|---------|----------------------|\n| **Dedicated business support line** | You skip the residential queue and reach technicians trained for business accounts. |\n| **SLA (Service Level Agreement)** | Often guarantees uptime (e.g., 99.9%) and **response/repair timeframes** (sometimes 4\u201324 hours). If they miss it, you may be entitled to service credits. |\n| **Priority routing / less oversubscription** | Business traffic is sometimes prioritized on the ISP\u2019s network, but this varies by provider and plan tier. |\n| **Proactive monitoring** | Some ISPs monitor business lines and will already see your evening degradation if it\u2019s on their end. |\n| **Static IP / symmetrical speeds** | If you have these, it makes remote diagnostics easier and faster for their NOC. |\n\n### How this changes your next step\n\n**Call the business support number** \u2014 not the general residential line. When you call:\n\n1. **State your account type immediately**: *\u201cI\u2019m on a business plan and I\u2019m experiencing consistent service degradation every evening between [X] and [Y] PM.\u201d*\n2. **Reference your SLA if you have one**: Ask what the guaranteed response time is for **intermittent evening outages** and whether this qualifies for an escalation to Network Operations.\n3. **Request specific remote tests**: Ask them to check **node congestion**, **SNR levels**, and **upstream power** for your line while the issue is actively happening (or from logs).\n4. **Ask for a ticket number and escalation path**: Business support is usually required to provide this; residential calls often are not.\n\n### Important caveat\n\nBetter support priority doesn\u2019t automatically fix a **physical or congestion issue** faster \u2014 but it means the ISP is contractually obligated to respond faster, and they have less room to blame your router when you\u2019ve already rebooted twice.\n\n### Do you know your SLA terms?\n\nIf you can tell me:\n- **Which ISP** you\u2019re with, and\n- **Whether you have an SLA** (and what the uptime/response guarantee is)\n\n\u2026I can tell you exactly what language to use to get the fastest escalation. In the meantime, still do the **modem light check** during the next drop \u2014 even business support will ask for those symptoms first.",
+        "metrics": {
+          "input_tokens": 2281,
+          "output_tokens": 1121,
+          "total_tokens": 3402,
+          "latency_seconds": 13.84638333300245,
+          "estimated_cost": 0.004059,
+          "tool_calls": 0,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": " Yes\u2014being on a **business internet plan** can change things significantly.\n\n**What a business plan typically means:**\n- **Higher support priority**: You usually bypass consumer queues and reach business/technical support directly\n- **SLA commitments**: Many business plans include uptime guarantees (e.g., 99.9%) and **service credits** if performance falls below that\n- **Different network provisioning**: Business traffic may be prioritized differently on the ISP\u2019s backend, though you can still experience evening congestion if the local node is oversubscribed\n- **Faster escalation paths**: If this is confirmed as an ISP-side issue, business accounts often get technician dispatch or infrastructure tickets escalated faster than residential accounts\n\n**However**, the technical troubleshooting remains the same. Before you call your ISP\u2019s business line and reference your SLA, you\u2019ll want evidence showing whether the drop is:\n1. **Their network** (wired connection still drops), or\n2. **Your equipment/Wi-Fi** (wired stays stable, only wireless drops)\n\n**Updated support memory:**\n- **Account/plan constraints**: Business internet plan\n- **Troubleshooting tried**: Two router restarts\n\nI still need you to run that **wired/Ethernet test** tonight, and if you can share:\n1. **Your ISP name**\n2. **Router and modem models**\n3. **Whether all house devices drop** or just the video call device\n\n\u2026then I can help you build the exact case to present to your ISP\u2019s business support team, including whether you should request an SLA credit or immediate escalation.",
+        "metrics": {
+          "input_tokens": 726,
+          "output_tokens": 687,
+          "total_tokens": 1413,
+          "latency_seconds": 8.592646916000376,
+          "estimated_cost": 0.0020844,
+          "tool_calls": 0,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 3619,
+        "input_token_reduction_percent": 0.5779303736825295,
+        "estimated_cost_saved": 0.009884999999999998,
+        "cost_reduction_percent": 0.5201427037949106,
+        "latency_delta_seconds": -18.178965166999845
+      }
+    },
+    {
+      "turn": 6,
+      "baseline": {
+        "response": " Before you request a technician dispatch on a **business plan**, run through this checklist. Business accounts often get faster response times, but if the problem turns out to be your router, internal cabling, or a device on your network, **you may be billed for the truck roll** even if the ISP sends someone quickly.\n\n### Checklist before requesting a technician\n\n| # | Check | Why it matters |\n|---|-------|---------------|\n| **1** | **Document modem lights during a drop** | Snap a photo of your ISP modem\u2019s LEDs when the internet cuts. If the \u201cOnline,\u201d \u201cCable,\u201d or \u201cDSL\u201d light is red/flashing, that proves the issue is upstream \u2014 not your LAN. |\n| **2** | **Bypass your router \u2014 Ethernet direct to modem** | Plug your laptop directly into the ISP modem with a cable and run a video call. If it still drops, the router is innocent and the problem is the line/modem/ISP. |\n| **3** | **Confirm all devices lose connection** | If only one laptop drops while the office printer stays online, it\u2019s a Wi-Fi or device issue, not a line issue. |\n| **4** | **Log exact times for 2\u20133 evenings** | Business support will pull node/line logs. Specific timestamps (e.g., \u201c7:14 PM\u20137:19 PM\u201d) let them correlate with congestion or maintenance events. |\n| **5** | **Run comparative speed tests** | Test at 10 AM and again at 8 PM. If evening speeds crater, that\u2019s strong evidence of node congestion \u2014 an ISP-side fix, not a premises visit. |\n| **6** | **Check for heat and power** | Feel the modem. If it\u2019s hot to the touch or on a crowded power strip, move it to a cool, dedicated outlet. Thermal faults can look like line faults. |\n| **7** | **Inspect physical connections** | Tighten coax/F-connector screws (finger-tight, then a quarter-turn). If you have splitters, try bypassing them temporarily. Loose fittings are a leading cause of evening signal drift. |\n| **8** | **Audit internal bandwidth hogs** | Check if cloud backups, security cameras uploading to the cloud, or software updates kick off at the same time every evening. If the internet \u201cdrops\u201d only when a backup saturates the upload, that\u2019s a LAN issue. |\n| **9** | **Check for recent changes** | New access point? New switch? Firmware update? If the drops started after a change, mention it \u2014 it may avoid an unnecessary dispatch. |\n| **10** | **Verify the demarcation point** | Know where your ISP\u2019s responsibility ends (usually the modem or the ONT/NID on the wall). If the issue is beyond that point toward the street, it\u2019s their problem. If it\u2019s your patch cables or router after that point, it\u2019s yours. |\n\n### What to say when you call\n\n> *\u201cI\u2019m on a business plan. I\u2019ve rebooted my router twice and bypassed it with a direct Ethernet test. The modem [Online] light goes red every evening between X and Y. I have timestamps and photos. I need you to check line signal levels and node congestion before we discuss a dispatch, because if this is upstream, a technician visit won\u2019t fix it.\u201d*\n\nIf they still want to send someone, ask: **\u201cIf the issue is determined to be my equipment or internal wiring, will I be charged for the service call?\u201d** This forces them to confirm the dispatch criteria and often triggers a deeper remote diagnostic first.\n\n**Do you have the results from any of the checks above yet?** If you can tell me what your modem lights do during the drop, I can tell you whether a technician is actually the right next step or if you should demand a network-ops escalation instead.",
+        "metrics": {
+          "input_tokens": 3295,
+          "output_tokens": 1237,
+          "total_tokens": 4532,
+          "latency_seconds": 17.202677334000327,
+          "estimated_cost": 0.0049458,
+          "tool_calls": 1,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": " Before you request a technician dispatch on a **business plan**, run through this checklist. It will prevent the ISP from blaming your LAN setup and can get you a **no-charge dispatch** if the fault is on their side.\n\n---\n\n### 1. Isolate the failure point (most critical)\n**Do tonight:** Connect your computer via **Ethernet directly to the ISP modem** (bypass your router entirely) during the usual drop window.\n- **If it still drops** \u2192 The issue is almost certainly the ISP line, node congestion, or their modem. Document this.\n- **If it stabilizes** \u2192 Your router, switch, or Wi-Fi is the culprit. Fix or replace that before calling; otherwise they\u2019ll charge you for a truck roll.\n\n**If you can\u2019t bypass the router:** At minimum, run a **continuous ping test** from a wired device:\n- Windows: `ping 8.8.8.8 -t`\n- Mac/Linux: `ping 8.8.8.8`\nLet it run from 30 minutes before the drops start until 30 minutes after. Screenshot any timeouts/latency spikes.\n\n---\n\n### 2. Document the pattern\nBusiness support reps need proof, not anecdotes. Gather:\n- **Exact dates/times** of drops for the last 5\u20137 evenings\n- **Devices affected**: All devices in the building, or just wireless ones?\n- **Symptoms**: Total disconnect, or just severe packet loss/slowdown?\n- **LED status** on modem/router when the drop happens (solid, flashing, red, etc.)\n\n---\n\n### 3. Check your side of the demarcation\n- **Heat**: Is the modem/router in a closet or near a heat source? Evening drops after all-day heat buildup are common.\n- **Coax/Ethernet connections**: Tighten all coax screws; look for kinked or chewed cables.\n- **Splitters**: If cable internet, eliminate unnecessary splitters temporarily.\n- **Power**: Plug modem/router into a **UPS or surge protector**, not a shared power strip with high-draw devices.\n\n---\n\n### 4. Business-specific prep\n- **Pull your SLA**: Check your contract for uptime guarantees and response-time commitments. If they promise 4-hour response and you\u2019ve had chronic evening outages, cite the SLA explicitly.\n- **Account info ready**: Business account number, service address, and whether you own or lease the modem/router.\n- **Ask about dispatch fees**: Confirm whether a technician visit is covered under your SLA if the fault is found on their network.\n\n---\n\n### 5. What NOT to do before the call\n- **Don\u2019t factory reset** ISP-owned equipment unless they instruct you. It can wipe logs they need to see.\n- **Don\u2019t schedule the visit during morning hours** if the issue only happens in the evening\u2014you\u2019ll waste a trip. Request a late-afternoon/early-evening window.\n\n---\n\n**Retained support memory update:**\n- **Troubleshooting tried**: Two router restarts; preparing for wired isolation test and documentation\n- **Escalation status**: Pre-technician phase; gathering evidence for business SLA dispatch\n\n**I still need from you:**\n1. **ISP name** and **modem/router models**\n2. **Connection type** (coax/cable, fiber ONT, DSL, etc.)\n3. **Whether all building devices drop** or just the wireless/video call device\n\nWith that, I can tell you exactly which diagnostics your ISP will ask for and whether your symptoms match a known node-congestion issue.",
+        "metrics": {
+          "input_tokens": 1120,
+          "output_tokens": 1083,
+          "total_tokens": 2203,
+          "latency_seconds": 18.39221449999968,
+          "estimated_cost": 0.0032711999999999997,
+          "tool_calls": 1,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 6,
+          "compressed_messages": 7,
+          "preserved": [
+            "customer issue",
+            "support memory",
+            "5 evidence source(s)"
+          ],
+          "notes": "Kept last 4 message(s); compressed 7 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": 5794,
+        "input_token_reduction_percent": 0.6062571936800251,
+        "estimated_cost_saved": 0.011559599999999998,
+        "cost_reduction_percent": 0.4826515018663727,
+        "latency_delta_seconds": -14.950881444833309
+      }
+    },
+    {
+      "turn": 7,
+      "baseline": {
+        "response": "  Based on the pattern you\u2019ve described \u2014 **every evening, during video calls, and unaffected by two router reboots** \u2014 here is how the evidence breaks down across the three possibilities.\n\n### The short answer\n\n| Likely cause | Probability | Why |\n|--------------|-------------|-----|\n| **Congestion (ISP/Node)** | **Highest** | Evening-only pattern + video-call sensitivity + reboots doing nothing is the classic signature of peak-time oversubscription. |\n| **Modem (heat or signal)** | **Possible** | If your modem lights change during the drop, or the modem is hot, this becomes the prime suspect. |\n| **Router** | **Lowest** | Two reboots should have cleared a temporary router glitch. Unless only your Wi-Fi devices drop while wired ones stay up, the router is probably innocent. |\n\n---\n\n### If it were **congestion** (most likely)\n\n- **The pattern:** Cable and some DSL nodes slow down predictably between 7\u201311 PM when the neighborhood gets home and streams video. Video calls are usually the first thing to break because they need steady upload bandwidth and low jitter, not just raw speed.\n- **What you\u2019d see:** Your modem lights stay normal (green/blue), but pages load slowly or freeze. A speed test at 8 PM is significantly worse than one at 10 AM.\n- **The business plan angle:** You *should* have traffic prioritization or a less-oversubscribed node. If you\u2019re still seeing this, your ISP likely has a genuine capacity issue on your local node \u2014 and because you have an SLA, they are obligated to fix it, not brush it off.\n\n### If it were a **modem issue**\n\n- **The pattern:** Modems can overheat after running all day, causing them to lose sync in the evening. Bad coax fittings, splitters, or degraded line signal also worsen under load.\n- **What you\u2019d see:** **All devices** lose internet at once. The modem\u2019s **Online**, **Cable**, or **DSL** light turns red, orange, or flashes during the drop. The modem may be hot to the touch.\n- **The test:** As noted in the Tom\u2019s Hardware and Level1Techs discussions, if your router reports \u201cno internet\u201d but the modem *thinks* it has a connection, that mismatch often points to a failing modem or poor line quality. You can verify this by checking your modem\u2019s connection stats/logs (signal levels / SNR) if your ISP allows access.\n\n### If it were a **router issue**\n\n- **The pattern:** Routers usually fail randomly or need frequent reboots. As MTA Alaska notes, if devices keep falling off the Wi-Fi across many devices, or the router\u2019s lights blink like it\u2019s restarting, that points to router hardware failure.\n- **Why it\u2019s less likely here:** You rebooted twice and the evening pattern persists. A dying router typically doesn\u2019t wait politely until 7 PM every night. The exception is **Wi-Fi interference** \u2014 your neighbors\u2019 networks peak in the evening and can crowd the 2.4 GHz band, causing wireless drops while the actual internet connection stays healthy.\n\n---\n\n### The one test that decides it\n\n**Plug your computer directly into the modem with an Ethernet cable** during the next drop.\n\n| Result | Diagnosis |\n|--------|-----------|\n| **Drop stops on Ethernet** | Router or Wi-Fi interference. Replace router or switch to 5 GHz/6 GHz. |\n| **Drop continues on Ethernet + modem lights change** | Modem or line signal issue. ISP should replace the modem or fix the line. |\n| **Drop continues on Ethernet + modem lights normal** | ISP congestion or upstream routing issue. Escalate under your business SLA. |\n\n**If you can tell me:** (1) Are you on Wi-Fi or Ethernet now? (2) Do **all devices** drop at once? (3) What do your **modem lights** do during the event? \u2014 I can narrow this from \u201cmost likely\u201d to \u201calmost certainly.\u201d",
+        "metrics": {
+          "input_tokens": 4817,
+          "output_tokens": 2379,
+          "total_tokens": 7196,
+          "latency_seconds": 22.306041542000457,
+          "estimated_cost": 0.0085998,
+          "tool_calls": 1,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": " Based on the symptom pattern you described\u2014**drops every evening, especially during video calls**\u2014here is how the three possibilities rank, and how to tell them apart.\n\n---\n\n### Most likely: ISP / Node Congestion (Evening Peak)\nA **strictly evening time-of-day pattern** is the classic signature of last-mile congestion, not equipment failure.\n\n- **Why video calls fail first**: Video calls need consistent, low-latency upstream and downstream. During peak hours (roughly 6 PM\u201311 PM), your local ISP node may be oversubscribed. Web browsing tolerates buffering; real-time video does not.\n- **Business plan caveat**: Business traffic is often prioritized over residential, but if the **local node or coax segment** itself is saturated, even prioritized business tiers can see packet loss and latency spikes.\n- **How to confirm**: If a **wired direct-to-modem test** still drops during the 7 PM\u201310 PM window but is stable at 10 AM, this is almost certainly an ISP-side capacity or plant issue.\n\n> *Evidence note*: Per [src_7_2], modem connection stats should inform on line quality, but if the modem maintains sync and signal levels look normal while speeds tank, the issue is upstream in the ISP network, not your modem.\n\n---\n\n### Possible: Router Issue (Heat or Wi-Fi Collapse)\nA router *can* cause evening-specific drops, but usually for different reasons than pure congestion.\n\n- **Heat buildup**: If the router is in a closet, attic, or near other electronics, thermal throttling often hits after a full day of use\u2014right when evening video calls start.\n- **Wi-Fi-specific**: If only wireless devices drop and wired devices stay up, the router\u2019s radio or firmware is the culprit. Neighboring Wi-Fi networks also get busier in the evening, causing interference.\n- **Restart history**: You mentioned two router restarts. If a restart only fixes the issue briefly (hours, not days), that points to either progressive heat load or a memory leak\u2014not a permanent hardware fix.\n\n> *Evidence note*: [src_7_5] notes connection issues can come from the Wi-Fi network or the router itself, distinct from modem or ISP outages.\n\n---\n\n### Less likely: Modem Issue\nModem failures usually present as **random or constant** disconnects, not a reliable 6 PM\u201310 PM schedule.\n\n- **Exception**: A failing modem with a weak power supply or overheating amplifier can get worse as ambient temperature rises in the evening.\n- **How to rule out**: Check the modem\u2019s diagnostic page (usually `192.168.100.1`) during an outage. If **SNR (Signal-to-Noise Ratio)** and **power levels** are within spec but you have no usable internet, the modem is doing its job; the ISP is not delivering traffic.\n\n> *Evidence note*: [src_7_1] and [src_7_2] both emphasize checking modem stats to isolate whether the issue is local hardware or the line/ISP.\n\n---\n\n### Quick Diagnostic Table\n\n| Symptom | Points To |\n|--------|-----------|\n| Drops only 6 PM\u201311 PM, wired + wireless affected | **ISP congestion / node issue** |\n| Drops only on Wi-Fi; wired Ethernet is stable | **Router / wireless issue** |\n| Modem LEDs go red/reset; stats show bad SNR | **Modem or coax line issue** |\n| Router is hot to touch; restart helps for 2\u20134 hours | **Router overheating / hardware failure** |\n| Business plan, but evening video calls stutter while speedtest is fine | **ISP upstream congestion / peering** |\n\n---\n\n### What I still need to narrow this further\nBefore you call for a technician, please confirm:\n1. **Does the drop hit every device in the building, or just the one on the video call?**\n2. **Can you test with a wired connection directly to the modem tonight?**\n3. **Your ISP and connection type** (coax/cable, fiber, etc.)\n\nIf it\u2019s **congestion**, your business SLA is your leverage for a no-charge dispatch and potential service credits. If it\u2019s **your router**, sending a technician will result in a bill and no fix.\n\n**Retained support memory update:**\n- **Prior decisions**: Framing issue as likely ISP congestion pending wired verification\n- **Escalation status**: Awaiting user\u2019s wired test results and device-scope confirmation before technician request",
+        "metrics": {
+          "input_tokens": 2060,
+          "output_tokens": 1758,
+          "total_tokens": 3818,
+          "latency_seconds": 20.559967417000735,
+          "estimated_cost": 0.0054552,
+          "tool_calls": 1,
+          "estimated": false
+        },
+        "pruning_triggered": false,
+        "pruning_event": null
+      },
+      "comparison": {
+        "input_tokens_saved": 8551,
+        "input_token_reduction_percent": 0.5948935578127174,
+        "estimated_cost_saved": 0.014704199999999994,
+        "cost_reduction_percent": 0.4517419354838708,
+        "latency_delta_seconds": -13.064480399142797
+      }
+    },
+    {
+      "turn": 8,
+      "baseline": {
+        "response": "  Based on the research, evening internet slowdowns and drops are a well-documented phenomenon. Here are the **most common causes**, organized by where the problem originates \u2014 and what this means for your business plan situation.\n\n---\n\n### 1. ISP/Network-Level Congestion (WAN)\n**The most common cause.** Between roughly **7 PM and 11 PM**, neighborhoods see a massive spike in streaming, gaming, and video calls. If your ISP has **oversubscribed your local node** (more customers than the infrastructure can comfortably serve), everyone\u2019s speeds drop during peak hours.\n\n- **Why video calls break first:** They need steady **upload bandwidth** and low latency, not just download speed. Congestion usually hits upload harder, causing frozen screens and dropped calls while web browsing might still feel \u201cokay.\u201d\n- **Business plan relevance:** Business traffic is *supposed* to be prioritized or on less-crowded nodes. If you\u2019re still seeing this, your ISP likely has a genuine capacity shortfall on your local node \u2014 and under your SLA, this is their problem to fix.\n\n### 2. Local Network Congestion (Inside Your Home)\nEven if your ISP line is fine, your **router can become overwhelmed** when too many devices compete for bandwidth at once. Evening is when smart TVs, phones, tablets, game consoles, and security cameras all wake up simultaneously.\n\n- **Common culprits:** 4K streaming, cloud backups, game updates, and security cameras uploading footage to the cloud.\n- **The video call factor:** A Zoom/Teams call needs about 2\u20133 Mbps upload. If a cloud backup or camera system suddenly saturates your upload, the call drops even if your download speed looks fine.\n\n### 3. ISP Throttling / Traffic Management\nSome providers intentionally manage speeds during peak periods. As noted in the research, **\u201csome internet providers manage their internet speeds during peak times through the use of throttling.\u201d** Business plans are typically exempt from this, but if your provider uses a shared residential/business node, the physical congestion still affects you.\n\n### 4. Wi-Fi Interference (The \u201cEvening Crowd\u201d Effect)\nYour neighbors\u2019 networks peak in the evening too. On the **2.4 GHz band**, channels become crowded with overlapping signals, causing packet loss that feels like an \u201cinternet drop\u201d even when your actual wired connection is stable.\n\n- **Why this matters for you:** If you\u2019re on Wi-Fi for video calls, evening interference can mimic a full internet outage. Switching to **5 GHz or 6 GHz** (if available) often eliminates this entirely.\n\n### 5. Hardware Overheating and Signal Drift\nModems and routers run all day and can **overheat or develop cache/memory issues** by evening. Coax cable connections (common with cable internet) can also expand and contract with temperature, causing signal levels to drift out of spec by the end of the day.\n\n- **Research note:** One source points out that routers slow down as \u201ccache builds up, memory gets clogged, and minor glitches cause\u201d instability. However, since you rebooted twice with no change, this is less likely to be a simple cache issue and more likely heat or line-signal related.\n\n### 6. Scheduled Maintenance or Known Faults\nISPs sometimes perform maintenance or experience node faults during evening hours. Checking your provider\u2019s network status page during the drop can reveal if there\u2019s scheduled work in your area.\n\n---\n\n### Summary Table: Where the Problem Lives\n\n| Cause | Location | Typical Evening Pattern | Likely for You? |\n|-------|----------|------------------------|-----------------|\n| **Node congestion** | ISP infrastructure | 7\u201311 PM slowdowns, affects entire neighborhood | **High** |\n| **Home device overload** | Your LAN | Drops when family streams/games | Medium |\n| **Wi-Fi interference** | Your wireless signal | Wi-Fi only, wired connection stays fine | Medium |\n| **Modem overheating/signal drift** | Your equipment/line | Worsens after all-day heat buildup | Medium |\n| **ISP throttling** | ISP policy | Predictable peak-hour degradation | Low (business plans usually exempt) |\n\n### Bottom Line for Your Situation\n\nGiven that **two router reboots did nothing** and the issue is **strictly evening-bound**, the research strongly points to **ISP-level node congestion** or a **modem/line signal issue that surfaces under peak load** \u2014 not a simple router glitch.\n\n**Your next step:** Before requesting a technician, do the **Ethernet-to-modem test** during the next drop. If it still fails with normal modem lights, you have evidence of upstream congestion and can escalate under your business SLA. If the modem lights change (red/orange), you have evidence of a line or modem failure \u2014 also ISP responsibility.\n\nWould you like help drafting the exact language to use when you call your business support line with this evidence?",
+        "metrics": {
+          "input_tokens": 6699,
+          "output_tokens": 1378,
+          "total_tokens": 8077,
+          "latency_seconds": 14.793696791999537,
+          "estimated_cost": 0.007326600000000001,
+          "tool_calls": 1,
+          "estimated": false
+        }
+      },
+      "pruned": {
+        "response": " Based on the research in the evidence ledger, here are the most commonly documented causes of evening-specific internet slowdowns and how they apply to your situation.\n\n---\n\n### 1. Peak-Hour Network Congestion (Most Common)\nThe strongest pattern in the research is that **evening hours (7 PM \u2013 11 PM)** represent a predictable congestion window when residential demand spikes.\n\n- **What happens**: Many households simultaneously stream video, game, and run video calls. If your ISP\u2019s local node or neighborhood segment lacks sufficient capacity, all subscribers on that node compete for bandwidth.  \n- **Business plan impact**: Even with business-tier prioritization, if the physical last-mile plant is oversubscribed, you can experience packet loss and latency spikes that kill video calls while basic browsing still works.\n\n> **Source**: [src_8_1] *\u201cMany households notice a drop in speed during the evening hours, usually between 7 pm and 11 pm\u201d* \u2014 https://www.swoop.com.au/blog/why-is-my-internet-slow-at-night  \n> **Source**: [src_8_3] *\u201cInternet speeds are supposed to be stable and available at all times of the day. What many customer[s experience\u2026]\u201d* (evening slowdowns) \u2014 https://epb.com/get-connected/tech-support/why-your-internet-slows-down-at-night\n\n---\n\n### 2. Router Cache Buildup and Memory Clog\nRouters are frequently identified as a source of slowdown that can **feel** time-of-day dependent because the device degrades after hours of continuous use.\n\n- **What happens**: Cache accumulates, memory gets clogged, and minor firmware glitches compound over the day. By evening, the router is no longer forwarding packets efficiently. A restart temporarily clears this, which matches your history of two restarts helping briefly.\n- **Why it seems evening-specific**: The router has been running all day; peak evening traffic is the straw that breaks the camel\u2019s back.\n\n> **Source**: [src_8_4] *\u201cYour Router Needs a Refresh\u2026 Like any piece of tech, your router can slow down over time. Cache builds up, memory gets clogged, and minor glitches can cause\u201d* slowdowns \u2014 https://www.superfast-it.com/articles/why-is-my-internet-so-slow-7-common-causes-and-how-to-fix-them\n\n---\n\n### 3. Local Wi-Fi Network Strain and Interference\nThe research notes that connection issues can originate from the **Wi-Fi network itself**, distinct from the ISP or modem.\n\n- **What happens**: In the evening, more neighbors are home using their own Wi-Fi networks, increasing channel interference. Inside your building, more staff or devices may connect simultaneously, maxing out the router\u2019s radio capacity or CPU.\n- **Diagnostic clue**: If the issue is strictly on wireless devices while a wired connection remains stable, this is the culprit.\n\n> **Source**: [src_7_5] *\u201cconnection issues can come from several places, your wi-fi network, the modem, an ISP outage\u201d* \u2014 https://www.mtasolutions.com/blog/how-do-you-know-if-your-router-is-bad-a-practical-home-checklist\n\n---\n\n### 4. Modem or ISP Line Quality Issues\nWhile less likely to follow a strict clock, modem and line problems can worsen under thermal or load stress.\n\n- **What happens**: A modem with a failing power supply, overheating amplifier, or degraded coax line may maintain a signal during low-load hours but fail when sustained evening throughput is demanded.\n- **How to identify**: Check the modem\u2019s diagnostic page (typically `192.168.100.1`) during an outage. If signal-to-noise ratio (SNR) and power levels are out of spec, the issue is the modem or the coax plant.\n\n> **Source**: [src_7_2] *\u201cUsually there\u2019s some way to look at the modem\u2019s connection stats, which should inform on line quality\u201d* \u2014 https://forum.level1techs.com/t/how-do-i-know-whether-its-the-modem-or-isp-causing-internet-problems/125871\n\n---\n\n### Summary: Likely Cause Ranking for Your Case\n\n| Rank | Cause | Why It Fits Your Symptoms |\n|------|-------|---------------------------|\n| **1** | **ISP / Node Congestion** | Strictly evening pattern; video calls (real-time, bidirectional) fail first under congestion |\n| **2** | **Router Overload / Heat / Cache** | Two restarts provided temporary relief; device may be thermally throttling by evening |\n| **3** | **Wi-Fi Interference / LAN Saturation** | Only if wireless devices are affected while wired is stable |\n| **4** | **Modem / Line Degradation** | Usually random or constant; less likely to respect a 6 PM\u201311 PM window |\n\n---\n\n### Recommended Next Step\nRun the **wired direct-to-modem test** tonight during your usual drop window. This single test will eliminate the router and Wi-Fi as variables.\n\n- **If it drops**: You have evidence the issue is ISP-side congestion or modem/line quality. Reference your **business SLA** and the documented evening congestion pattern when requesting a no-charge dispatch.\n- **If it stays up**: The router is the problem. A replacement or firmware update will likely resolve it without needing an ISP technician.\n\n**Retained support memory update:**\n- **Troubleshooting steps already tried**: Two router restarts; research completed on evening congestion causes\n- **Prior decisions**: Awaiting wired isolation test to distinguish between ISP congestion and local hardware failure\n- **Tavily sources preserved**: All src_8_* and src_7_* URLs retained above",
+        "metrics": {
+          "input_tokens": 3092,
+          "output_tokens": 2315,
+          "total_tokens": 5407,
+          "latency_seconds": 21.091768332997162,
+          "estimated_cost": 0.0074112,
+          "tool_calls": 1,
+          "estimated": false
+        },
+        "pruning_triggered": true,
+        "pruning_event": {
+          "turn": 8,
+          "compressed_messages": 11,
+          "preserved": [
+            "customer issue",
+            "support memory",
+            "15 evidence source(s)"
+          ],
+          "notes": "Kept last 4 message(s); compressed 11 older message(s)."
+        }
+      },
+      "comparison": {
+        "input_tokens_saved": 12158,
+        "input_token_reduction_percent": 0.5769468039671618,
+        "estimated_cost_saved": 0.014619599999999996,
+        "cost_reduction_percent": 0.36662102586479284,
+        "latency_delta_seconds": -10.644161406625244
+      }
+    }
+  ],
+  "summary": {
+    "turns": 8,
+    "baseline_total_input_tokens": 21073,
+    "pruned_total_input_tokens": 8915,
+    "baseline_total_tokens": 32420,
+    "pruned_total_tokens": 17210,
+    "input_token_reduction_percent": 0.5769468039671618,
+    "baseline_total_cost": 0.0398766,
+    "pruned_total_cost": 0.025257,
+    "estimated_cost_savings": 0.014619599999999996,
+    "cost_reduction_percent": 0.36662102586479284,
+    "baseline_avg_latency": 22.66616020337551,
+    "pruned_avg_latency": 12.021998796750268
+  }
+}
