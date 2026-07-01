@@ -17,6 +17,7 @@ venv/
 .mypy_cache/
 *.egg-info/
 .uv/
+backend/uv.lock
 
 # --- Node / Next.js ---
 node_modules/
@@ -25,11 +26,14 @@ frontend/out/
 frontend/next-env.d.ts
 npm-debug.log*
 
-# --- Generated session artifacts (keep the samples) ---
+# --- Generated session artifacts ---
+# Ignore ad-hoc runs, but keep the sample + one committed demo run for reviewers.
 logs/*.json
 !logs/sample_session.json
+!logs/session_20260701T060851.json
 reports/*.md
 !reports/sample_report.md
+!reports/session_20260701T060851.md
 
 # --- OS / editor ---
 .DS_Store
