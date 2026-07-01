@@ -30,7 +30,11 @@ a hardcoded prompt trick.
 3. `feat/pruning-engine` — retention policy / support memory / evidence ledger serialization,
    ledger dedup, and the deterministic context pruner (rebuilds a compact system message + keeps the
    last N turns; emits a PruningEvent every `prune_every`). All prior skips now implemented.
-4. `feat/agents-ab-endpoint` — _TODO_
+4. `feat/agents-ab-endpoint` — BaselineAgent (full history + persisted raw Tavily evidence),
+   PrunedAgent (pruner + evidence ledger), shared deterministic search policy, SessionManager A/B
+   orchestration (injectable agent factory), and the real `POST /api/chat/turn`. Honest finding:
+   pruning wins only once history is long enough to outweigh the pruned agent's fixed retention
+   overhead — early turns can favor baseline; crossover lands in the doc's ~turn 5–15 window.
 5. `feat/frontend` — _TODO_
 6. `feat/reporting-polish` — _TODO_
 
