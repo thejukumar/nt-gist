@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  /* Deep navy → charcoal → violet gradient (doc §10 visual language). */
+  background: radial-gradient(1200px 800px at 20% -10%, #1e293b 0%, transparent 60%),
+    linear-gradient(160deg, #0b1020 0%, #0a0a12 55%, #140a1f 100%);
+  background-attachment: fixed;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+/* Glassmorphism card utility (doc §10). */
+@layer components {
+  .glass {
+    @apply rounded-2xl border shadow-lg;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+  }
+}

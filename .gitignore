@@ -1,0 +1,37 @@
+# --- Secrets / env ---
+.env
+.env.*
+!.env.example
+frontend/.env.local
+
+# --- Assignment starter (must NOT be committed) ---
+starter_agent.py
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+.uv/
+
+# --- Node / Next.js ---
+node_modules/
+frontend/.next/
+frontend/out/
+frontend/next-env.d.ts
+npm-debug.log*
+
+# --- Generated session artifacts (keep the samples) ---
+logs/*.json
+!logs/sample_session.json
+reports/*.md
+!reports/sample_report.md
+
+# --- OS / editor ---
+.DS_Store
+.idea/
+.vscode/
