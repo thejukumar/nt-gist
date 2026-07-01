@@ -7,8 +7,14 @@
 - [x] `POST /api/demo/run` returns the 15 telecom prompts
 - [x] `npm install` + `npm run dev` serve the placeholder UI
 - [x] `starter_agent.py` is git-ignored; `.env` is git-ignored
-- [ ] Real Nebius call returns a response (feat/providers-metrics)
-- [ ] Real Tavily search returns sources (feat/providers-metrics)
+
+## `feat/providers-metrics`
+- [x] `pytest` passes: 23 passed, 2 skipped (token usage, session stats, provider helpers, LC message mapping)
+- [x] Token usage: usage_metadata primary path + tiktoken fallback estimator
+- [x] Session stats: cumulative totals + fractional savings comparison
+- [x] Provider clients import without langchain installed (lazy import); app still boots
+- [ ] Real Nebius call returns a response (needs uv + NEBIUS_API_KEY)
+- [ ] Real Tavily search returns sources (needs uv + TAVILY_API_KEY)
 - [ ] Baseline tokens grow across turns (feat/agents-ab-endpoint)
 - [ ] Pruning triggers on turn 2 (feat/pruning-engine)
 - [ ] 15-turn demo completes; report + JSON log generated (feat/reporting-polish)
