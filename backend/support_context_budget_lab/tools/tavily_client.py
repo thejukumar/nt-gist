@@ -12,6 +12,11 @@ import os
 from dataclasses import dataclass
 from typing import Any
 
+from ..logging_config import get_logger
+from ..metrics.latency import measure_latency
+
+log = get_logger("tavily")
+
 
 @dataclass
 class SourceRecord:
@@ -63,6 +68,14 @@ class TavilyClient:
 
     def search(self, query: str) -> list[SourceRecord]:
         """Run a search, count the call, and return normalized records."""
-        raw = self._search.invoke({"query": query})
+        log.info(f"search q={query[:60]!r}")
+        try:
+            with measure_latency() as elapsed:
+                raw = self._search.invoke({"query": query})
+        except Exception as exc:
+            log.exception(f"search FAILED: {exc}")
+            raise
         self.tool_calls += 1
-        return _normalize_results(raw)
+        records = _normalize_results(raw)
+        log.info(f"done results={len(records)} latency={elapsed[0]:.2f}s")
+        return records

@@ -15,8 +15,11 @@ import os
 from dataclasses import dataclass
 from typing import Any
 
+from ..logging_config import get_logger
 from ..metrics.latency import measure_latency
 from ..metrics.token_usage import estimate_message_tokens, estimate_tokens, extract_usage
+
+log = get_logger("nebius")
 
 
 @dataclass
@@ -72,8 +75,14 @@ class NebiusClient:
     def complete(self, messages: list[dict[str, Any]]) -> LLMResult:
         """Send messages, measure latency, extract usage (or estimate)."""
         lc_messages = _to_lc_messages(messages)
-        with measure_latency() as elapsed:
-            response = self._chat.invoke(lc_messages)
+        prompt_chars = sum(len(str(m.get("content", ""))) for m in messages)
+        log.info(f"call model={self.model} messages={len(messages)} prompt_chars={prompt_chars}")
+        try:
+            with measure_latency() as elapsed:
+                response = self._chat.invoke(lc_messages)
+        except Exception as exc:
+            log.exception(f"call FAILED after invoke: {exc}")
+            raise
 
         text = _extract_text(response)
         usage = extract_usage(response)
@@ -85,6 +94,10 @@ class NebiusClient:
             output_tokens = estimate_tokens(text)
             estimated = True
 
+        log.info(
+            f"done in={input_tokens} out={output_tokens} "
+            f"latency={elapsed[0]:.2f}s estimated={estimated}"
+        )
         return LLMResult(
             text=text,
             input_tokens=input_tokens,

@@ -14,10 +14,13 @@ from typing import Any, Callable
 from .agents.baseline_agent import BaselineAgent
 from .agents.pruned_agent import PrunedAgent
 from .config import Settings, get_settings
+from .logging_config import get_logger
 from .metrics.metrics_models import TurnMetrics
 from .metrics.session_stats import CumulativeStats, comparison
 from .pruning.context_pruner import ContextPruner
 from .pruning.retention_policy import RetentionPolicy
+
+log = get_logger("session")
 
 # (baseline_agent, pruned_agent)
 AgentFactory = Callable[["Session"], tuple[Any, Any]]
@@ -106,9 +109,19 @@ class SessionManager:
         """Run one prompt through both agents; accumulate stats; build response."""
         session.turn_count += 1
         turn = session.turn_count
+        log.info(f"turn {turn}: start · baseline")
 
         baseline_text, baseline_metrics = session.baseline_agent.run_turn(message, turn)
+        log.info(
+            f"turn {turn}: baseline done in={baseline_metrics.input_tokens} "
+            f"out={baseline_metrics.output_tokens} · pruned"
+        )
+
         pruned_text, pruned_metrics, event = session.pruned_agent.run_turn(message, turn)
+        log.info(
+            f"turn {turn}: pruned done in={pruned_metrics.input_tokens} "
+            f"out={pruned_metrics.output_tokens} pruning={event is not None}"
+        )
 
         session.baseline_stats.add(baseline_metrics)
         session.pruned_stats.add(pruned_metrics)
