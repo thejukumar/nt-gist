@@ -24,7 +24,9 @@ a hardcoded prompt trick.
 
 ## Branch-by-branch
 1. `feat/scaffold` — repo structure, layering stubs, `/health`, run script, docs. _(in progress)_
-2. `feat/providers-metrics` — _TODO_
+2. `feat/providers-metrics` — Nebius client (usage_metadata primary + tiktoken fallback, latency
+   capture), Tavily client (normalized sources + tool-call count), metrics layer (session stats +
+   comparison). langchain imported lazily so the app still boots without it.
 3. `feat/pruning-engine` — _TODO_
 4. `feat/agents-ab-endpoint` — _TODO_
 5. `feat/frontend` — _TODO_
