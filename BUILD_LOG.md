@@ -35,7 +35,10 @@ a hardcoded prompt trick.
    orchestration (injectable agent factory), and the real `POST /api/chat/turn`. Honest finding:
    pruning wins only once history is long enough to outweigh the pruned agent's fixed retention
    overhead — early turns can favor baseline; crossover lands in the doc's ~turn 5–15 window.
-5. `feat/frontend` — _TODO_
+5. `feat/frontend` — wired the Next.js UI to the backend: stateful page (session + turns + cumulative
+   metrics), split-screen grid with bifurcated status cards, response transcripts, savings strip,
+   pruning timeline, chat input, and demo automation (steps through /demo/run prompts). `next build`
+   compiles + typechecks cleanly.
 6. `feat/reporting-polish` — _TODO_
 
 ## Verification

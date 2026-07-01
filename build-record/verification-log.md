@@ -6,6 +6,7 @@
 - [x] Backend starts; `GET /health` returns `{"status":"ok", ...}`
 - [x] `POST /api/demo/run` returns the 15 telecom prompts
 - [x] `npm install` + `npm run dev` serve the placeholder UI
+- [x] (feat/frontend) `npm run build` compiles + typechecks cleanly (4 routes)
 - [x] `starter_agent.py` is git-ignored; `.env` is git-ignored
 
 ## `feat/providers-metrics`
