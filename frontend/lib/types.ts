@@ -17,7 +17,7 @@ export interface AgentTurn {
 
 export interface PrunedTurn extends AgentTurn {
   pruning_triggered: boolean;
-  pruning_event: Record<string, unknown> | null;
+  pruning_event: PruningEventView | null;
 }
 
 export interface Comparison {
@@ -57,4 +57,21 @@ export interface DemoRunResponse {
   scenario: string;
   description: string;
   prompts: string[];
+}
+
+export interface AgentCumulative {
+  inputTokens: number;
+  outputTokens: number;
+  totalTokens: number;
+  cost: number;
+  avgLatency: number;
+  toolCalls: number;
+  turns: number;
+}
+
+export interface PruningEventView {
+  turn: number;
+  compressed_messages: number;
+  preserved: string[];
+  notes: string;
 }

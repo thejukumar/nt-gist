@@ -1,25 +1,38 @@
-// Reusable column wrapper: AgentStatusCard on top, AgentResponsePanel below.
-// TODO(feat/frontend): pass live metrics + response through.
+"use client";
 
-import { AgentResponsePanel } from "./agent-response-panel";
+import { AgentResponsePanel, type ChatMessage } from "./agent-response-panel";
+import { AgentStatusCard } from "./agent-status-card";
+import type { AgentCumulative, TurnMetrics } from "@/lib/types";
 
-export function AgentColumn({ agentType }: { agentType: "baseline" | "pruned" }) {
+// Reusable column: status card on top, response panel below.
+export function AgentColumn({
+  agentType,
+  current,
+  cumulative,
+  messages,
+  busy,
+  pruning,
+}: {
+  agentType: "baseline" | "pruned";
+  current: TurnMetrics | null;
+  cumulative: AgentCumulative;
+  messages: ChatMessage[];
+  busy: boolean;
+  pruning?: { events: number; triggeredThisTurn: boolean };
+}) {
   const isBaseline = agentType === "baseline";
   return (
     <div className="flex flex-col gap-3">
-      <div className="glass p-4">
-        <div
-          className={`text-sm font-medium ${
-            isBaseline ? "text-baseline" : "text-pruned"
-          }`}
-        >
-          {isBaseline ? "Baseline Agent" : "Pruned Agent"}
-        </div>
-        <div className="text-xs text-white/50">
-          {isBaseline ? "Full-history context" : "Retention-aware context"}
-        </div>
-      </div>
-      <AgentResponsePanel agentType={agentType} />
+      <AgentStatusCard
+        agentType={agentType}
+        title={isBaseline ? "Baseline Agent" : "Pruned Agent"}
+        subtitle={isBaseline ? "Full-history context" : "Retention-aware context"}
+        contextMode={isBaseline ? "Full history" : "Pruned memory"}
+        current={current}
+        cumulative={cumulative}
+        pruning={pruning}
+      />
+      <AgentResponsePanel agentType={agentType} messages={messages} busy={busy} />
     </div>
   );
 }
