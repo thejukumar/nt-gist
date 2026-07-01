@@ -17,7 +17,7 @@ export function AgentResponsePanel({
 }) {
   const accent = agentType === "baseline" ? "text-baseline" : "text-pruned";
   return (
-    <div className="glass flex max-h-[420px] min-h-[220px] flex-col gap-3 overflow-y-auto p-4">
+    <div className="flex max-h-[460px] min-h-[260px] flex-col gap-3 overflow-y-auto rounded-xl border border-white/10 bg-white/[0.02] p-4">
       {messages.length === 0 && !busy ? (
         <p className="text-sm text-white/40">
           Responses will appear here. Send a message or run the demo.
