@@ -15,6 +15,11 @@
 - [x] Provider clients import without langchain installed (lazy import); app still boots
 - [ ] Real Nebius call returns a response (needs uv + NEBIUS_API_KEY)
 - [ ] Real Tavily search returns sources (needs uv + TAVILY_API_KEY)
+
+## `feat/pruning-engine`
+- [x] `pytest` passes: 32 passed, 0 skipped
+- [x] Prune cadence: fires every 2 turns; keeps last N turns verbatim
+- [x] Compact context rebuilds system message (persona + retention + memory + ledger)
+- [x] Evidence ledger dedupes by url; memory/policy serialize to prompt blocks
 - [ ] Baseline tokens grow across turns (feat/agents-ab-endpoint)
-- [ ] Pruning triggers on turn 2 (feat/pruning-engine)
 - [ ] 15-turn demo completes; report + JSON log generated (feat/reporting-polish)
