@@ -31,4 +31,11 @@
 - [x] Tavily search increments tool_calls and populates the pruned ledger
 - [x] `POST /api/chat/turn` returns baseline + pruned + comparison (shape validated)
 - [ ] LIVE: real Nebius/Tavily 15-turn run (needs uv + keys) — pending
-- [ ] 15-turn demo completes; report + JSON log generated (feat/reporting-polish)
+
+## `feat/reporting-polish`
+- [x] `pytest` passes: 40 passed (adds reporting tests)
+- [x] JSON logger + Markdown report build correctly (structure asserted)
+- [x] `GET /api/report/{id}` writes both files and returns paths
+- [x] Sample artifacts committed (15-turn mock run; 44.1% input-token reduction)
+- [x] Frontend Export button wired; `next build` still clean
+- [ ] LIVE: real Nebius/Tavily 15-turn run (user will add keys at final run)

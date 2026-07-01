@@ -87,6 +87,21 @@ def chat_turn(
 
 
 @router.get("/report/{session_id}")
-def get_report(session_id: str) -> dict:
-    """Export JSON + Markdown report. Wired in feat/reporting-polish."""
-    raise HTTPException(status_code=501, detail="Not implemented yet (feat/reporting-polish)")
+def get_report(
+    session_id: str,
+    sessions: SessionManager = Depends(get_session_manager),
+) -> dict:
+    """Write JSON + Markdown reports for the session; return their paths."""
+    session = sessions.get(session_id)
+    if session is None:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    from ..reporting.json_logger import write_session_log
+    from ..reporting.markdown_report import write_markdown_report
+
+    json_path = write_session_log(session)
+    md_path = write_markdown_report(session)
+    return {
+        "json_log_path": f"logs/{json_path.name}",
+        "markdown_report_path": f"reports/{md_path.name}",
+    }

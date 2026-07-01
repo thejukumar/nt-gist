@@ -23,10 +23,27 @@ long-running support conversations.
   evaluation-style comparison loop.
 
 ## Key design decisions
-- _TODO: metrics ⟂ pruning separation; usage_metadata primary + tokenizer fallback; prune-every-2._
+- **Metrics are independent of pruning.** The pruner only decides *what context the pruned agent
+  sends*; the metrics layer measures each Nebius call identically for both agents. Pruning could
+  change entirely and the measurement path would not.
+- **Honest token counting.** Primary = `usage_metadata` from the Nebius/LangChain response; fallback
+  = a local tiktoken estimate, flagged `estimated`. Cost is always labeled *estimated*, never a bill.
+- **Deterministic pruning, no extra LLM call.** Prune every 2 turns, keep last 2: the pruner rebuilds
+  a compact system message (persona + retention policy + support memory + evidence ledger) and keeps
+  the recent window. Evidence is compacted into a ledger instead of carrying raw Tavily blobs.
+- **Clean A/B.** Both agents share model, prompt intent, tool, and `temperature=0`; the only variable
+  is the context strategy.
 
-## Results (from a 15-turn demo)
-- _TODO: baseline vs pruned totals, % input-token reduction, estimated cost saved, projection._
+## Results (illustrative 15-turn telecom run; see `reports/sample_report.md`)
+Generated deterministically with a mock provider (real runs use live Nebius/Tavily):
+- Baseline total input tokens **9,140** vs pruned **5,113** → **44.1% input-token reduction**.
+- Baseline input grows every turn (94 → 998); pruned stays flat (~360) once the window fills.
+- Estimated cost saved **36.2%**; pruning events on turns 4/6/8/10/12/14.
+- The Markdown report projects per-conversation savings across 10,000 monthly conversations.
 
 ## Limitations
-- _TODO: estimated cost, no accuracy scoring in MVP, single scenario._
+- Cost is estimated from configurable pricing, not an actual bill.
+- Answer accuracy is not scored in the MVP (no LLM-judge); we show context retention + pruning events.
+- Pruning wins on long conversations; short chats can favor the baseline due to the pruned agent's
+  fixed retention overhead (crossover ~turn 5 in the sample).
+- Single scenario, single pruning strategy, in-memory sessions (no DB/auth).

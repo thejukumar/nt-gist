@@ -41,4 +41,9 @@ export const api = {
 
   runDemo: (session_id: string, scenario = "telecom_support") =>
     post<DemoRunResponse>("/api/demo/run", { session_id, scenario }),
+
+  getReport: (session_id: string) =>
+    get<{ json_log_path: string; markdown_report_path: string }>(
+      `/api/report/${session_id}`,
+    ),
 };

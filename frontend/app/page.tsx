@@ -20,6 +20,7 @@ export default function Home() {
   const [turns, setTurns] = useState<TurnView[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
 
   const latest = turns.length ? turns[turns.length - 1] : null;
   const cumulative = useMemo(() => computeCumulative(turns), [turns]);
@@ -74,16 +75,37 @@ export default function Home() {
     setTurns([]);
     setSessionId(null);
     setError(null);
+    setNotice(null);
+  }
+
+  async function exportReport() {
+    if (!sessionId) return;
+    setError(null);
+    try {
+      const paths = await api.getReport(sessionId);
+      setNotice(`Report written: ${paths.markdown_report_path} · ${paths.json_log_path}`);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Export failed");
+    }
   }
 
   return (
     <main className="mx-auto max-w-6xl p-4 md:p-8">
-      <Header onRunDemo={runDemo} onReset={reset} busy={busy} />
+      <Header
+        onRunDemo={runDemo}
+        onReset={reset}
+        onExport={exportReport}
+        busy={busy}
+        canExport={turns.length > 0}
+      />
 
       {error && (
         <div className="glass mb-4 border-red-400/40 px-4 py-2 text-sm text-red-300">
           {error}
         </div>
+      )}
+      {notice && (
+        <div className="glass mb-4 border-pruned/40 px-4 py-2 text-sm text-pruned">{notice}</div>
       )}
 
       <AgentComparisonGrid turns={turns} latest={latest} cumulative={cumulative} busy={busy} />

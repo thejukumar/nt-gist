@@ -39,10 +39,16 @@ a hardcoded prompt trick.
    metrics), split-screen grid with bifurcated status cards, response transcripts, savings strip,
    pruning timeline, chat input, and demo automation (steps through /demo/run prompts). `next build`
    compiles + typechecks cleanly.
-6. `feat/reporting-polish` — _TODO_
+6. `feat/reporting-polish` — JSON session logger + Markdown report (with 10k-conversation business
+   projection), `GET /api/report/{id}` endpoint, frontend Export button, committed sample artifacts
+   (`logs/sample_session.json`, `reports/sample_report.md`; 44.1% input-token reduction over 15
+   turns), and doc polish (README + technical statement).
 
 ## Verification
 See [`build-record/verification-log.md`](build-record/verification-log.md).
 
 ## What I'd improve next
-- _TODO: streaming, LLM-judge quality scoring, semantic-retrieval pruning, persistence._
+- Model-driven tool use (let the model decide when to search) instead of the keyword heuristic.
+- LLM-based support-memory extraction (richer than the first-message heuristic).
+- Streaming responses (SSE), LLM-as-judge quality scoring, semantic-retrieval pruning, persistence.
+- A live end-to-end run recorded in the verification log (pending uv + API keys).
